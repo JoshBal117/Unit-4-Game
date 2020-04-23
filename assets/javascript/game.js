@@ -5,7 +5,7 @@
 
 $(document).ready(function() {
 
-})
+
 //list of global variables for game
 let attackbonus =0;
 let player = ; // this will be a holder for the attacker object
@@ -17,39 +17,53 @@ let ec = false; //have remaining vairables false until PC is chosen
 //This is a list of PCs (Playable Characters) for the game 
 //Also, the characters not chosen, become ECs (Enemy Characters) to be fought by PC
 let characters = [
-    'Asaj Ventress': {
+    'Asaj Ventress'{
         name: 'Asaj Ventress',
-        health: 100,
+        health: 120,
         attack: 5,
+        baseattack: 5,
+        localDiv: "#asajventresscard"
         imageUrl: assets/images/
         enemyCounterAttack: 5
+        isDefeated: false
     } 
 
-    'Obi-Wan Kenobi':{
+    'Obi-Wan Kenobi'{
         name: 'Obi-Wan Kenobi',
-        health: 120,
+        health: 175,
         attack: 8,
+        baseattack: 8,
+        localDiv: "#obiwankenobicard"
         imageUrl: assets/images/
-        enemyCounterAttack: 5
+        enemyCounterAttack: 10
+        isDefeated: false
     }
 
-    'Darth Tyranus':{
+    'Darth Tyranus'{
         name: 'Darth Tyranus',
-        health: 150,
+        health: 180,
         attack: 12,
+        baseattack: 12,
         imageUrl: assets/images/
+        localDiv: "#darthtyranuscard",
         enemyCounterAttack: 15
+        isDefeated false
     }
 
-    'Darth Maul': {
+    'Darth Maul'{
         name: 'Darth Maul',
-        health: 180,
-        attack: 10
+        health: 200,
+        attack: 15,
+        baseattack: 15,
+        localDiv: "#darthmaulcard",
         imageUrl: assets/images/
         enemyCounterAttack: 25,
+        isDefeated: false
     }
 ];
 
+
+})
 //
 
 
