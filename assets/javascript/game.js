@@ -60,7 +60,15 @@ let characters = [
 ];
 
 
-})
+
+}
+
+function playerattack() {
+    characters(defender).health = characters(defender).health -characters(player).attack;
+    $("#playerWindow").text("Your attack hits " + characters(defender).name + " for " +characters(player).attack + " damage!");
+    characters(player).attack = characters(player).attack + characters(player).baseattack
+}
+
 //
 
 
