@@ -18,37 +18,37 @@ let thirdenemy= null;
 //This is a list of PCs (Playable Characters) for the game 
 //Also, the characters not chosen, become ECs (Enemy Characters) to be fought by PC
 let characters = [
-    'Asaj Ventress'{
+    asajentress = {
         name: 'Asaj Ventress',
-        health: 120,
+        health: 100,
         attack: 5,
         baseattack: 5,
-        localDiv: "#asajventresscard"
-        enemyCounterAttack: 5
+        localDiv: "#asajventresscard",
+        enemyCounterAttack: 5,
         isDefeated: false
-    } 
+    }, 
 
-    'Obi-Wan Kenobi'{
+    obiwankenobi = {
         name: 'Obi-Wan Kenobi',
         health: 175,
         attack: 8,
         baseattack: 8,
-        localDiv: "#obiwankenobicard"
-        enemyCounterAttack: 10
+        localDiv: "#obiwankenobicard",
+        enemyCounterAttack: 10,
         isDefeated: false
-    }
+    },
 
-    'Darth Tyranus'{
+    darthtyranus = {
         name: 'Darth Tyranus',
         health: 180,
         attack: 6,
         baseattack: 6,
         localDiv: "#darthtyranuscard",
-        enemyCounterAttack: 15
-        isDefeated false
-    }
+        enemyCounterAttack: 20,
+        isDefeated: false
+    },
 
-    'Darth Maul'{
+    darthmaul = {
         name: 'Darth Maul',
         health: 200,
         attack: 15,
@@ -59,18 +59,17 @@ let characters = [
     }
 ];
 
-
-
-}
-
 function playerattack() {
     characters(defender).health = characters(defender).health -characters(player).attack;
-    $("#playerWindow").text("Your attack hits " + characters(defender).name + " for " +characters(player).attack + " damage!");
+    $("#playerWindow").text("Your attack hits " + characters(defender).name + " for " + characters(player).attack + " damage!");
     characters(player).attack = characters(player).attack + characters(player).baseattack
+    charcaters(player).health = charcaters(player).health - characters(defender).counterattack
+    console.log("this is working")
 }
 
 //
 
 
-//creating a function to have the player battle the defender where the victor continues on to the next round until all ECs have been defeated. 
+//creating a function to have the player battle the defender where the victor continues on to the next round until all Defenders have been defeated 
 
+}
