@@ -7,12 +7,9 @@ $(document).ready(function() {
 
 
 //list of global variables for game
-let attackbonus =0;
-let player = ; // this will be a holder for the attacker object
-let defender = ; // this will be a holder for the defender object
-let pc = false; //have variable be intially false until chosen
-let ec = false; //have remaining vairables false until PC is chosen
-
+let player = null; // this will be a holder for the attacker object
+let defender = null; // this will be a holder for the defender object
+let enemiesDefeated = 0;
 
 //This is a list of PCs (Playable Characters) for the game 
 //Also, the characters not chosen, become ECs (Enemy Characters) to be fought by PC
@@ -23,7 +20,6 @@ let characters = [
         attack: 5,
         baseattack: 5,
         localDiv: "#asajventresscard"
-        imageUrl: assets/images/
         enemyCounterAttack: 5
         isDefeated: false
     } 
@@ -34,7 +30,6 @@ let characters = [
         attack: 8,
         baseattack: 8,
         localDiv: "#obiwankenobicard"
-        imageUrl: assets/images/
         enemyCounterAttack: 10
         isDefeated: false
     }
@@ -42,9 +37,8 @@ let characters = [
     'Darth Tyranus'{
         name: 'Darth Tyranus',
         health: 180,
-        attack: 12,
-        baseattack: 12,
-        imageUrl: assets/images/
+        attack: 6,
+        baseattack: 6,
         localDiv: "#darthtyranuscard",
         enemyCounterAttack: 15
         isDefeated false
@@ -56,7 +50,6 @@ let characters = [
         attack: 15,
         baseattack: 15,
         localDiv: "#darthmaulcard",
-        imageUrl: assets/images/
         enemyCounterAttack: 25,
         isDefeated: false
     }
@@ -67,5 +60,5 @@ let characters = [
 //
 
 
-//creating a function to have the PC battle the EC where the victor continues on to the next round until all ECs have been defeated. 
+//creating a function to have the player battle the defender where the victor continues on to the next round until all ECs have been defeated. 
 
