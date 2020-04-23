@@ -10,6 +10,10 @@ $(document).ready(function() {
 let player = null; // this will be a holder for the attacker object
 let defender = null; // this will be a holder for the defender object
 let enemiesDefeated = 0;
+let activeCharacter = null; //these are going to be used for background changing
+let firstenemy = null; 
+let secondenemy = null; 
+let thirdenemy= null; 
 
 //This is a list of PCs (Playable Characters) for the game 
 //Also, the characters not chosen, become ECs (Enemy Characters) to be fought by PC
