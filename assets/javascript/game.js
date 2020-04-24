@@ -1,10 +1,5 @@
-
-
-
-//this function holds the whole game together
-
 $(document).ready(function() {
-
+//this function holds the whole game together
 
 //list of global variables for game
 let player = null; // this will be a holder for the attacker object
@@ -61,10 +56,10 @@ let characters = [
 //creating a function to have the player battle the defender where the victor continues on to the next round until all Defenders have been defeated 
 function playerattack() {
     characters(defender).health = characters(defender).health -characters(player).attack;
-    $("#playerWindow").text("Your attack hits " + characters(defender).name + " for " + characters(player).attack + " damage!");
+    $("#playerOutput").text("Your attack hits " + characters(defender).name + " for " + characters(player).attack + " damage!");
     characters(player).attack = characters(player).attack + characters(player).baseattack
     charcaters(player).health = charcaters(player).health - characters(defender).counterattack
-    console.log("this is working")
+    console.log("its working!!")
     }
 
 //
