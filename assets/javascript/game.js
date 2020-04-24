@@ -61,7 +61,7 @@ function playerattack() {
     characters(player).attack = characters(player).attack + characters(player).baseattack;
     charcaters(player).health = charcaters(player).health - characters(defender).enemycounterattack;
     $("#defenderOutput").text(characters(chosenenemy).name + "Hits you for " + characters(chosenenemy).enemycounterattack + " damage!");
-    $$("#Player.cardHP").text(characters(player).health);
+    $("#Player.cardHP").text(characters(player).health);
     
     }
 
