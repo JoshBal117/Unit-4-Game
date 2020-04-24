@@ -66,8 +66,10 @@ function playerattack() {
     }
 
 //
-
-
+//Player Victory or Lose sequence
+if (characters[player].health <= 0) {
+    
+}
 
 
 })
