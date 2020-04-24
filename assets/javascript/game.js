@@ -35,7 +35,7 @@ let characters = [
 
     darthtyranus = {
         name: 'Darth Tyranus',
-        health: 180,
+        health: 210,
         attack: 6,
         baseattack: 6,
         localDiv: "#darthtyranuscard",
@@ -45,7 +45,7 @@ let characters = [
 
     darthmaul = {
         name: 'Darth Maul',
-        health: 200,
+        health: 250,
         attack: 15,
         baseattack: 15,
         localDiv: "#darthmaulcard",
@@ -57,10 +57,12 @@ let characters = [
 function playerattack() {
     characters(defender).health = characters(defender).health -characters(player).attack;
     $("#playerOutput").text("Your attack hits " + characters(defender).name + " for " + characters(player).attack + " damage!");
-    $("#Enemy")
-    characters(player).attack = characters(player).attack + characters(player).baseattack
-    charcaters(player).health = charcaters(player).health - characters(defender).counterattack
-    console.log("its working!!")
+    $("#Enemy.cardHP").text(characters(defender).health);
+    characters(player).attack = characters(player).attack + characters(player).baseattack;
+    charcaters(player).health = charcaters(player).health - characters(defender).enemycounterattack;
+    $("#defenderOutput").text(characters(chosenenemy).name + "Hits you for " + characters(chosenenemy).enemycounterattack + " damage!");
+    $$("#Player.cardHP").text(characters(player).health);
+    
     }
 
 //
