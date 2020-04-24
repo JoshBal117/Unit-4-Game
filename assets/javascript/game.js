@@ -57,6 +57,7 @@ let characters = [
 function playerattack() {
     characters(defender).health = characters(defender).health -characters(player).attack;
     $("#playerOutput").text("Your attack hits " + characters(defender).name + " for " + characters(player).attack + " damage!");
+    $("#Enemy")
     characters(player).attack = characters(player).attack + characters(player).baseattack
     charcaters(player).health = charcaters(player).health - characters(defender).counterattack
     console.log("its working!!")
