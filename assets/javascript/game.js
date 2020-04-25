@@ -10,6 +10,7 @@ let firstenemy = null;
 let secondenemy = null; 
 let thirdenemy= null; 
 
+
 //This is a list of PCs (Playable Characters) for the game 
 //Also, the characters not chosen, become ECs (Enemy Characters) to be fought by PC
 let characters = [
@@ -67,8 +68,18 @@ function playerattack() {
 
 //
 //Player Victory or Lose sequence
-if (characters[player].health <= 0) {
-    
+function defeatedSequence(){
+    if(characters[player].health <= 0) {
+        console.log ("Don't choke on your aspirations!")
+    } else if (characters[defender].health <= 0) {
+        enemiesDefeated++
+        console.log("enemy defeated")
+    } else if (enemiesDefeated === 3) {
+        console.log("The Force will be with you, always")
+    } 
+       
+        
+
 }
 
 
