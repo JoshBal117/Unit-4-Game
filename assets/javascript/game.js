@@ -60,8 +60,11 @@ function selectChar() {
     $(document).on("click", ".charBox", function () {
         if (gamestate === chooseChar && player == null)
         chosenChar = $(this).attr('data-character');
-
-    })
+        let origin = $(this).html();
+        let des    = $(you).append(origin);
+        $(playerOutput).text("You have chosen " + charcter(player).name);
+        gamestate = "chooseEnemyChar";
+         
 }
 
 
