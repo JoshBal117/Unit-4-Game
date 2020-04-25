@@ -6,8 +6,8 @@ let player = null; // this will be a holder for the attacker object
 let defender = null; // this will be a holder for the defender object
 let enemiesDefeated = 0;
 let activeCharacter = null; //these are going to be used for background changing
-let firstenemy = null; 
-let secondenemy = null; 
+let firstEnemy = null; 
+let secondEnemy = null; 
 let thirdenemy= null; 
 let gamestate= chooseChar;
 
@@ -65,6 +65,8 @@ $(document).on("click", ".charBox", function () {
         $(playerOutput).text("You have chosen " + charcter(player).name);
         gamestate = "chooseEnemyChar";
 }
+  
+},
     
          
 
@@ -98,4 +100,4 @@ $(document).on("click", ".charBox", function () {
        
         
 
-})}})
+}})
