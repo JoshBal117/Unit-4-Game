@@ -64,9 +64,10 @@ $(document).on("click", ".charBox", function () {
         let des    = $(you).append(origin);
         $(playerOutput).text("You have chosen " + charcter(player).name);
         gamestate = "chooseEnemyChar";
-}
+})}
+
   
-},
+
     
          
 
@@ -75,7 +76,7 @@ $(document).on("click", ".charBox", function () {
 
 
 //creating a function to have the player battle the defender where the victor continues on to the next round until all Defenders have been defeated 
-,function playerattack() {
+function playerattack() {
     characters(defender).health = characters(defender).health -characters(player).attack;
     $("#playerOutput").text("Your attack hits " + characters(defender).name + " for " + characters(player).attack + " damage!");
     $("#Enemy.cardHP").text(characters(defender).health);
@@ -88,7 +89,7 @@ $(document).on("click", ".charBox", function () {
 
 //
 //Player Victory or Lose sequence
-,function defeatedSequence(){
+function defeatedSequence(){
     if(characters[player].health <= 0) {
         alert("Don't choke on your aspirations!")
     } else if (characters[defender].health <= 0) {
