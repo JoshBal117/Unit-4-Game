@@ -57,21 +57,23 @@ let characters = [
 ];
 //This function is the player selector; allowing the player to choose their attacker, and will also have the characters not chosen be the defenders
 function selectChar() {
-    $(document).on("click", ".charBox", function () {
+$(document).on("click", ".charBox", function () {
         if (gamestate === chooseChar && player == null)
         chosenChar = $(this).attr('data-character');
         let origin = $(this).html();
         let des    = $(you).append(origin);
         $(playerOutput).text("You have chosen " + charcter(player).name);
         gamestate = "chooseEnemyChar";
-         
 }
+    
+         
+
 
 
 
 
 //creating a function to have the player battle the defender where the victor continues on to the next round until all Defenders have been defeated 
-function playerattack() {
+,function playerattack() {
     characters(defender).health = characters(defender).health -characters(player).attack;
     $("#playerOutput").text("Your attack hits " + characters(defender).name + " for " + characters(player).attack + " damage!");
     $("#Enemy.cardHP").text(characters(defender).health);
@@ -84,19 +86,16 @@ function playerattack() {
 
 //
 //Player Victory or Lose sequence
-function defeatedSequence(){
+,function defeatedSequence(){
     if(characters[player].health <= 0) {
-        console.log ("Don't choke on your aspirations!")
+        alert("Don't choke on your aspirations!")
     } else if (characters[defender].health <= 0) {
         enemiesDefeated++
         console.log("enemy defeated")
     } else if (enemiesDefeated === 3) {
-        console.log("The Force will be with you, always")
+        alert("The Force will be with you, always. Congratulations! You won!")
     } 
        
         
 
-}
-
-
-})
+})}})
