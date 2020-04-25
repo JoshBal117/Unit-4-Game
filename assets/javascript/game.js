@@ -9,12 +9,13 @@ let activeCharacter = null; //these are going to be used for background changing
 let firstenemy = null; 
 let secondenemy = null; 
 let thirdenemy= null; 
+let gamestate= chooseChar;
 
 
 //This is a list of PCs (Playable Characters) for the game 
 //Also, the characters not chosen, become ECs (Enemy Characters) to be fought by PC
 let characters = [
-    asajentress = {
+    asajventress = {
         name: 'Asaj Ventress',
         health: 100,
         attack: 5,
@@ -54,6 +55,18 @@ let characters = [
         isDefeated: false
     }
 ];
+//This function is the player selector; allowing the player to choose their attacker, and will also have the characters not chosen be the defenders
+function selectChar() {
+    $(document).on("click", ".charBox", function () {
+        if (gamestate === chooseChar && player == null)
+        chosenChar = $(this).attr('data-character');
+
+    })
+}
+
+
+
+
 //creating a function to have the player battle the defender where the victor continues on to the next round until all Defenders have been defeated 
 function playerattack() {
     characters(defender).health = characters(defender).health -characters(player).attack;
