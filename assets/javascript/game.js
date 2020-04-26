@@ -1,6 +1,6 @@
 $(document).ready(function() {
 //this function holds the whole game together
-
+console.log("ready")
 //list of global variables for game
 let player = null; // this will be a holder for the attacker object
 let defender = null; // this will be a holder for the defender object
@@ -56,57 +56,59 @@ let characters = [
     }
 ];
 //This function is the player selector; allowing the player to choose their attacker, and will also have the characters not chosen be the defenders
-function chooseYourCharacter() {
+// function chooseYourCharacter() {
+//     console.log("does it work?")
     // TODO
     // this function should pick your character and then automaticaly make the other charaters enemies.
-    $('.mycharImage').on('click', function() {
-        // $('#characters').empty();
+    $('.mycharImage').on('click', function(event) {
+       console.log(event) 
+       // $('#characters').empty();
         $('#player').append('<div class="title">Your Character</div>')
 
-        $yourCharacter = $(this);
-        $yourCharacter.addClass('yourCharacter');
-        $yourCharacter.removeClass('col-md-3 character');
-
+        let yourCharacter = $(this);
+        yourCharacter.addClass('yourCharacter');
+        yourCharacter.removeClass('col-md-3 character');
+            console.log("this is your character " + yourCharacter)
         yourHealth = parseInt($yourCharacter.attr('data_health'));
         yourAttack = parseInt($yourCharacter.attr('data_attack'));
 
-        $('#characters').append($yourCharacter);
+        $('#characters').append(yourCharacter);
 
         $('#remainingEnemies').append('<div class="title">Pick Your Enemy</div>');
 
         // remove the chosen character and then run the createCharacters function again to recreate the 'enemies'
-        var indexRemove = characters.indexOf($yourCharacter.attr('data_nickName'))
+        var indexRemove = characters.indexOf(yourCharacter.attr('data_nickName'))
         charactersObjects.splice(indexRemove, 1);
 
         // call createCharacters function again, but this time there are only 3
         createCharacters(charactersObjects);
 
     });
-};
+// };
 
 function pickYourOpponent() {
 
-        $('.enemy').on('click', function() {
-            $('#characters').empty();
+        $('.mycharImage').on('click', function() {
+            $('#player').empty();
             $('#currentEnemy').empty();
             $('#fightButton').empty();
 
             // enemy picked
-            $currentEnemy = $(this);
+            let currentEnemy = $(this);
 
-            $currentEnemy.addClass('currentEnemy');
-            $currentEnemy.removeClass('enemy');
+            currentEnemy.addClass('currentEnemy');
+            currentEnemy.removeClass('enemy');
 
             // append your character and enemy picked to the fighting area
-            $('#yourCharacter').append($yourCharacter);
+            $('#yourCharacter').append(yourCharacter);
 
         
 
-            $('#currentEnemy').append($currentEnemy);
+            $('#currentEnemy').append(currentEnemy);
             isThereOpponent = true;
 
 
-            var indexRemove = characters.indexOf($currentEnemy.attr('data_nickName'));
+            var indexRemove = characters.indexOf(currentEnemy.attr('data_nickName'));
             charactersObjects.splice(indexRemove, 1);
 
             createCharacters(charactersObjects);

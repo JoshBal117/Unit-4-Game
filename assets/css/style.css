@@ -1,5 +1,6 @@
 body {
-    background-image: url(assets/images/JEDIvsSITH-BACKGROUND.jpeg);
+    background-image: url(../images/JEDIvsSITH-BACKGROUND.jpeg);
+    background-image: no-repeat;
 }
 
 
