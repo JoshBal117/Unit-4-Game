@@ -80,7 +80,7 @@ let characters = [
         characters.splice(indexRemove, 1);
 
         // call createCharacters function again, but this time there are only 3
-       
+       createCharacters(characters);
 
     });
 
@@ -110,7 +110,7 @@ function pickYourOpponent() {
             var indexRemove = characters.indexOf(currentEnemy.attr('data_nickName'));
             charactersObjects.splice(indexRemove, 1);
 
-            createCharacters(charactersObjects);
+            createCharacters(characters);
 
             currentEnemyAttack = 0;
             console.log(currentEnemyAttack);
@@ -141,26 +141,6 @@ function pickYourOpponent() {
 
 
 
-// function selectChar() {
-//     $(document).on("click", ".charBox", function () {
-//         if (gameState === "chooseChar" && player == null) {
-//             chosenChar = $(this).attr('data-character');
-//             var origin = $(this).html();
-//             var dest = $("#you").append(origin);
-//             $("#yourOutput").text("You have chosen " + gameChars[chosenChar].name);
-//             gameState = "chooseEnemyChar"
-//         } else {
-//             if (gameState === "chooseEnemyChar" && defender == null) {
-//                 defender = $(this).attr('data-character');
-//                 var enemyOrigin = $(this).html();
-//                 var enemyDest = $("#enemy").append(enemyOrigin);
-//                 turnOn("#attackDiv");
-//                 $(this).remove();
-//                 $("#enemyOutput").text("You have chosen to fight " + gameChars[defender].name);
-//             }
-//         }
-//     });
-  
 
     
          
