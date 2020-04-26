@@ -9,7 +9,7 @@ let activeCharacter = null; //these are going to be used for background changing
 let firstEnemy = null; 
 let secondEnemy = null; 
 let thirdenemy= null; 
-let gamestate= chooseChar;
+let gamestate= "chooseChar";
 
 
 //This is a list of PCs (Playable Characters) for the game 
@@ -59,12 +59,18 @@ let characters = [
 function selectChar() {
 $(document).on("click", ".charBox", function () {
         if (gamestate === chooseChar && player == null)
-        chosenChar = $(this).attr('data-character');
+        player = $(this).attr('data-character');
         let origin = $(this).html();
         let des    = $(you).append(origin);
         $(playerOutput).text("You have chosen " + charcter(player).name);
         gamestate = "chooseEnemyChar";
-})}
+        console.log("character chosen")
+})  ; else 
+        if(gameState === "chooseEnemyChar" && chosenEnemyChar == null) {
+        defender = $(this).attr('data-character');
+        let enemyOrigin = $(this).html();
+        let enemyDest = $("#enemy").append(enemyOrigin);
+}
 
   
 
