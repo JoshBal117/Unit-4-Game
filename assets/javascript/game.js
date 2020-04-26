@@ -65,8 +65,8 @@ $(document).on("click", ".charBox", function () {
         $(playerOutput).text("You have chosen " + charcter(player).name);
         gamestate = "chooseEnemyChar";
         console.log("character chosen")
-})  ; else 
-        if(gameState === "chooseEnemyChar" && chosenEnemyChar == null) {
+//this function is to be used to choose the first enemy character
+})  ; else if(gameState === "chooseEnemyChar" && chosenEnemyChar == null) {
         defender = $(this).attr('data-character');
         let enemyOrigin = $(this).html();
         let enemyDest = $("#enemy").append(enemyOrigin);
