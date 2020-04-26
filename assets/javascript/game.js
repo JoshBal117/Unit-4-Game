@@ -56,25 +56,109 @@ let characters = [
     }
 ];
 //This function is the player selector; allowing the player to choose their attacker, and will also have the characters not chosen be the defenders
-function selectChar() {
-    $(document).on("click", ".charBox", function () {
-        if (gameState === "chooseChar" && player == null) {
-            chosenChar = $(this).attr('data-character');
-            var origin = $(this).html();
-            var dest = $("#you").append(origin);
-            $("#yourOutput").text("You have chosen " + gameChars[chosenChar].name);
-            gameState = "chooseEnemyChar"
-        } else {
-            if (gameState === "chooseEnemyChar" && defender == null) {
-                defender = $(this).attr('data-character');
-                var enemyOrigin = $(this).html();
-                var enemyDest = $("#enemy").append(enemyOrigin);
-                turnOn("#attackDiv");
-                $(this).remove();
-                $("#enemyOutput").text("You have chosen to fight " + gameChars[defender].name);
-            }
-        }
+function chooseYourCharacter() {
+    // TODO
+    // this function should pick your character and then automaticaly make the other charaters enemies.
+    $('.mycharImage').on('click', function() {
+        // $('#characters').empty();
+        $('#player').append('<div class="title">Your Character</div>')
+
+        $yourCharacter = $(this);
+        $yourCharacter.addClass('yourCharacter');
+        $yourCharacter.removeClass('col-md-3 character');
+
+        yourHealth = parseInt($yourCharacter.attr('data_health'));
+        yourAttack = parseInt($yourCharacter.attr('data_attack'));
+
+        $('#characters').append($yourCharacter);
+
+        $('#remainingEnemies').append('<div class="title">Pick Your Enemy</div>');
+
+        // remove the chosen character and then run the createCharacters function again to recreate the 'enemies'
+        var indexRemove = characters.indexOf($yourCharacter.attr('data_nickName'))
+        charactersObjects.splice(indexRemove, 1);
+
+        // call createCharacters function again, but this time there are only 3
+        createCharacters(charactersObjects);
+
     });
+};
+
+function pickYourOpponent() {
+
+        $('.enemy').on('click', function() {
+            $('#characters').empty();
+            $('#currentEnemy').empty();
+            $('#fightButton').empty();
+
+            // enemy picked
+            $currentEnemy = $(this);
+
+            $currentEnemy.addClass('currentEnemy');
+            $currentEnemy.removeClass('enemy');
+
+            // append your character and enemy picked to the fighting area
+            $('#yourCharacter').append($yourCharacter);
+
+        
+
+            $('#currentEnemy').append($currentEnemy);
+            isThereOpponent = true;
+
+
+            var indexRemove = characters.indexOf($currentEnemy.attr('data_nickName'));
+            charactersObjects.splice(indexRemove, 1);
+
+            createCharacters(charactersObjects);
+
+            currentEnemyAttack = 0;
+            console.log(currentEnemyAttack);
+
+            // Your enemy's health and attack
+            currentEnemyAttack = parseInt($currentEnemy.attr('data_attack'));
+            // console.log("CURRENT ENEMY ATTACK: ", currentEnemyAttack);
+            currentEnemyHealth = parseInt($currentEnemy.attr('data_health'));
+
+            console.log('IS THERE OPPONENT: ' + isThereOpponent)
+
+            // Check if there is an opponent
+            $('#lightSabers').on('click', function() {
+                if (isThereOpponent) {
+                    fight();
+                } else {
+                    alert('YOU NEED TO PICK AN OPPONENT');
+                }
+            });
+        });
+};
+
+
+
+
+
+
+
+
+
+// function selectChar() {
+//     $(document).on("click", ".charBox", function () {
+//         if (gameState === "chooseChar" && player == null) {
+//             chosenChar = $(this).attr('data-character');
+//             var origin = $(this).html();
+//             var dest = $("#you").append(origin);
+//             $("#yourOutput").text("You have chosen " + gameChars[chosenChar].name);
+//             gameState = "chooseEnemyChar"
+//         } else {
+//             if (gameState === "chooseEnemyChar" && defender == null) {
+//                 defender = $(this).attr('data-character');
+//                 var enemyOrigin = $(this).html();
+//                 var enemyDest = $("#enemy").append(enemyOrigin);
+//                 turnOn("#attackDiv");
+//                 $(this).remove();
+//                 $("#enemyOutput").text("You have chosen to fight " + gameChars[defender].name);
+//             }
+//         }
+//     });
   
 
     
@@ -85,7 +169,7 @@ function selectChar() {
 
 
 //creating a function to have the player battle the defender where the victor continues on to the next round until all Defenders have been defeated 
-function playerattack(event).onclick; {
+$("#attack").click( function playerattack(event) {
     characters(defender).health = characters(defender).health -characters(player).attack;
     $("#playerOutput").text("Your attack hits " + characters(defender).name + " for " + characters(player).attack + " damage!");
     $("#Enemy.cardHP").text(characters(defender).health);
@@ -94,7 +178,7 @@ function playerattack(event).onclick; {
     $("#defenderOutput").text(characters(chosenenemy).name + "Hits you for " + characters(chosenenemy).enemycounterattack + " damage!");
     $("#Player.cardHP").text(characters(player).health);
     
-    }
+    })
 
 //
 //Player Victory or Lose sequence

@@ -1,4 +1,6 @@
-
+#logo {
+     max-width: 250px;
+}
 .border {
     border: 5px solid #dadada;
     border-radius: 15px;
@@ -13,37 +15,56 @@
     background-color: #9ecaed;
     color: black;
     width: 161px;
-    position: absolute;
+    /* position: absolute; */
     top: 10px;
     left: 9px;
     text-align: center;
     padding-bottom: 2px;
 }
 
+
+
 .cardHP {
     font-family: 'Exo', sans-serif;
     background-color: #AFD086;
     color: black;
     width: 161px;
-    position: absolute;
+    /* position: absolute; */
     top: 113px;
     left: 9px;
     text-align: center;
     padding-top: 2px;
 }
 
+#ventressimage {
+    max-width: 220px;
+    max-height: 230px;
+}
+#obiwanimage {
+    max-width: 174px;
+    max-height: 230px;
+}
+#tyranusimage {
+    max-width: 200px;
+    max-height: 200px;
+}
+#maulimage {
+    max-width: 320px;
+    max-height: 180px;
+}
+
 #asajventressCard,
 #obiwankenobiCard,
 #darthtyranusCard,
 #darthmaulCard {
-    position: relative;
-    float: left;
+    /* position: relative;
+    float: left; */
 }
 
-#characterBox {
+/* #characterBox {
     float: left;
-    min-width: 800px;
-}
+    min-width: 800px; 
+} */
 
 .charCard {
     padding: 5px;

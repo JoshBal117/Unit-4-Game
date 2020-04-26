@@ -6,15 +6,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, intital-scale=1.0" />
     <Title>STAR WARS RPG</Title>
-    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
     
 </head>
     
 <body>
     <div class="container">
-        <div id="logo">
-            <img src="assets/images/1280px-Star_Wars_Logo.svg.png" alt="">
+        <div>
+            <img src="assets/images/1280px-Star_Wars_Logo.svg.png" alt="" id="logo">
             <p>ROLE PLAYING GAME</p>
         </div>
     </div>
@@ -23,28 +23,28 @@
             <div id="asajventress" data-character="0" class="charBox">
                 <div class="charCard" id="asajventresscard">
                     <h1 class="cardTitle">Asaj Ventress</h1>
-                    <img class="border" id="ventressimage" src="assets/images/asajj-ventress.jpg">
+                    <img class="border mycharImage" id="ventressimage" src="assets/images/asajj-ventress.jpg">
                     <h1 class="cardHP">100</h1>
                 </div>
             </div>
             <div id="obiwankenobi" data-character="1" class="charBox">
                 <div class="charCard" id="obiwankenobicard">
                     <h1 class="cardTitle">Obi-Wan Kenobi</h1>
-                    <img class="border" id="obiwanimage" src="assets/images/Obi-Wan.jpg">
+                    <img class="border mycharImage" id="obiwanimage" src="assets/images/Obi-Wan.jpg">
                     <h1 class="cardHP">175</h1>
                 </div>
             </div>
             <div id="darthtyranus" data-character="2" class="charBox">
                 <div class="charCard" id="darthtyranuscard">
                     <h1 class="cardTitle">Darth Tyranus</h1>
-                    <img class="border" id="tyranusimage" src="assets/images/Dooku_Max (2).jpg">
+                    <img class="border mycharImage" id="tyranusimage" src="assets/images/Dooku_Max (2).jpg">
                     <h1 class="cardHP">220</h1>
                 </div>
             </div>
             <div id="darthmaul" data-character="3" class="charBox">
                 <div class="charCard" id="=darthmaulcard">
                     <h1 class="cardTitle">Darth Maul</h1>
-                    <img class="border" id="maulimage" src="assets/images/darth-maul.jpg">
+                    <img class="border mycharImage"  id="maulimage" src="assets/images/darth-maul.jpg">
                     <h1 class="cardHP">250</h1>
                 </div>
             </div>
@@ -60,7 +60,7 @@
             <div class='row'>
                 <div class='col-md-5' id="player"></div>
                 <div id="attackDiv">
-                    <a href="#" class="btn double attack">ATTACK</a>
+                    <a href="#" class="btn double attack" id="attack">ATTACK</a>
                 </div>
                 <div class='col-md-5' id="defender"></div>
             </div>
