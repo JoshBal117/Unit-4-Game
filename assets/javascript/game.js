@@ -57,21 +57,31 @@ let characters = [
 ];
 //This function is the player selector; allowing the player to choose their attacker, and will also have the characters not chosen be the defenders
 function selectChar() {
-$(document).on("click", ".charBox", function () {
-        if (gamestate === chooseChar && player == null)
-        player = $(this).attr('data-character');
-        let origin = $(this).html();
-        let des    = $(you).append(origin);
-        $(playerOutput).text("You have chosen " + charcter(player).name);
-        gamestate = "chooseEnemyChar";
-        console.log("character chosen");
-//this function is to be used to choose the first enemy character
-})  ;else if(gameState === "chooseEnemyChar" && chosenEnemyChar == null) {
-        defender = $(this).attr('data-character');
-        let enemyOrigin = $(this).html();
-        let enemyDest = $("#enemy").append(enemyOrigin);
-}
-
+    $(document).on("click", ".charBox", function () {
+        if (gameState === "chooseChar" && player == null) {
+            chosenChar = $(this).attr('data-character');
+            var origin = $(this).html();
+            var dest = $("#you").append(origin);
+            turnOn("#you");
+            turnOff("#choose");
+            turnOn("#chooseEnemy");
+            turnOn("#outputUI")
+            $(this).remove();
+            $("#yourOutput").text("You have chosen " + gameChars[chosenChar].name);
+            gameState = "chooseEnemyChar"
+        } else {
+            if (gameState === "chooseEnemyChar" && defender == null) {
+                defender = $(this).attr('data-character');
+                var enemyOrigin = $(this).html();
+                var enemyDest = $("#enemy").append(enemyOrigin);
+                turnOff("#chooseEnemy");
+                turnOn("#enemy");
+                turnOn("#attackDiv");
+                $(this).remove();
+                $("#enemyOutput").text("You have chosen to fight " + gameChars[defender].name);
+            }
+        }
+    });
   
 
     
