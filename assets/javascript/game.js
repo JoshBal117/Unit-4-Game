@@ -62,11 +62,6 @@ function selectChar() {
             chosenChar = $(this).attr('data-character');
             var origin = $(this).html();
             var dest = $("#you").append(origin);
-            turnOn("#you");
-            turnOff("#choose");
-            turnOn("#chooseEnemy");
-            turnOn("#outputUI")
-            $(this).remove();
             $("#yourOutput").text("You have chosen " + gameChars[chosenChar].name);
             gameState = "chooseEnemyChar"
         } else {
@@ -74,8 +69,6 @@ function selectChar() {
                 defender = $(this).attr('data-character');
                 var enemyOrigin = $(this).html();
                 var enemyDest = $("#enemy").append(enemyOrigin);
-                turnOff("#chooseEnemy");
-                turnOn("#enemy");
                 turnOn("#attackDiv");
                 $(this).remove();
                 $("#enemyOutput").text("You have chosen to fight " + gameChars[defender].name);
