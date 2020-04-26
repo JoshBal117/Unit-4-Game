@@ -23,24 +23,28 @@
             <div id="asajventress" data-character="0" class="charBox">
                 <div class="charCard" id="asajventresscard">
                     <h1 class="cardTitle">Asaj Ventress</h1>
+                    <img class="border" id="ventressimage" src="assets/images/asajj-ventress.jpg">
                     <h1 class="cardHP">100</h1>
                 </div>
             </div>
             <div id="obiwankenobi" data-character="1" class="charBox">
                 <div class="charCard" id="obiwankenobicard">
                     <h1 class="cardTitle">Obi-Wan Kenobi</h1>
+                    <img class="border" id="obiwanimage" src="assets/images/Obi-Wan.jpg">
                     <h1 class="cardHP">175</h1>
                 </div>
             </div>
             <div id="darthtyranus" data-character="2" class="charBox">
                 <div class="charCard" id="darthtyranuscard">
                     <h1 class="cardTitle">Darth Tyranus</h1>
-                    <h1 class="cardHP">220</h2>
+                    <img class="border" id="tyranusimage" src="assets/images/Dooku_Max (2).jpg">
+                    <h1 class="cardHP">220</h1>
                 </div>
             </div>
             <div id="darthmaul" data-character="3" class="charBox">
                 <div class="charCard" id="=darthmaulcard">
                     <h1 class="cardTitle">Darth Maul</h1>
+                    <img class="border" id="maulimage" src="assets/images/darth-maul.jpg">
                     <h1 class="cardHP">250</h1>
                 </div>
             </div>
@@ -52,21 +56,17 @@
     </div>
     
     <div id="Battlefield">
-        <div id="Player">
-            <h2 id="chosenplayer">Your Character</h2>
+        <div class='container'>
+            <div class='row'>
+                <div class='col-md-5' id="player"></div>
+                <div class='col-md-2' id="playerAttack"></div>
+                <div class='col-md-5' id="defender"></div>
+            </div>
         </div>
-        
-        <div id="Enemy">
-            <h2 id="chooseenemy">Your Enemy</h2>
-        </div>
-        
-        <div id="attackBtn">
-            <p1>ATTACK</p1>
-        </div>
-        
-        <div id="resetBtn">
-           <p2>RESET</p2>
-        </div>
+    </div>
+
+    <div id="resetBtn">
+        <p2>RESET</p2>
     </div>
 
     <div class="outputWindow">

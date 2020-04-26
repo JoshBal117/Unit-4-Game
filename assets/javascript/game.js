@@ -64,9 +64,9 @@ $(document).on("click", ".charBox", function () {
         let des    = $(you).append(origin);
         $(playerOutput).text("You have chosen " + charcter(player).name);
         gamestate = "chooseEnemyChar";
-        console.log("character chosen")
+        console.log("character chosen");
 //this function is to be used to choose the first enemy character
-})  ; else if(gameState === "chooseEnemyChar" && chosenEnemyChar == null) {
+})  ;else if(gameState === "chooseEnemyChar" && chosenEnemyChar == null) {
         defender = $(this).attr('data-character');
         let enemyOrigin = $(this).html();
         let enemyDest = $("#enemy").append(enemyOrigin);
@@ -82,7 +82,7 @@ $(document).on("click", ".charBox", function () {
 
 
 //creating a function to have the player battle the defender where the victor continues on to the next round until all Defenders have been defeated 
-function playerattack() {
+function playerattack(event).onclick; {
     characters(defender).health = characters(defender).health -characters(player).attack;
     $("#playerOutput").text("Your attack hits " + characters(defender).name + " for " + characters(player).attack + " damage!");
     $("#Enemy.cardHP").text(characters(defender).health);
