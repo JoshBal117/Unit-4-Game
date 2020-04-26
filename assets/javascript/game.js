@@ -8,9 +8,9 @@ let enemiesDefeated = 0;
 let activeCharacter = null; //these are going to be used for background changing
 let firstEnemy = null; 
 let secondEnemy = null; 
-let thirdenemy= null; 
-let gamestate= "chooseChar";
-
+let thirdenemy = null; 
+let gamestate = "chooseyourCharacters";
+let createCharacters = null;
 
 //This is a list of PCs (Playable Characters) for the game 
 //Also, the characters not chosen, become ECs (Enemy Characters) to be fought by PC
@@ -56,8 +56,7 @@ let characters = [
     }
 ];
 //This function is the player selector; allowing the player to choose their attacker, and will also have the characters not chosen be the defenders
-// function chooseYourCharacter() {
-//     console.log("does it work?")
+
     // TODO
     // this function should pick your character and then automaticaly make the other charaters enemies.
     $('.mycharImage').on('click', function(event) {
@@ -67,10 +66,10 @@ let characters = [
 
         let yourCharacter = $(this);
         yourCharacter.addClass('yourCharacter');
-        yourCharacter.removeClass('col-md-3 character');
+        yourCharacter.removeClass('col-md-3 characters');
             console.log("this is your character " + yourCharacter)
-        yourHealth = parseInt($yourCharacter.attr('data_health'));
-        yourAttack = parseInt($yourCharacter.attr('data_attack'));
+        yourHealth = parseInt(yourCharacter.attr('data_health'));
+        yourAttack = parseInt(yourCharacter.attr('data_attack'));
 
         $('#characters').append(yourCharacter);
 
@@ -78,13 +77,13 @@ let characters = [
 
         // remove the chosen character and then run the createCharacters function again to recreate the 'enemies'
         var indexRemove = characters.indexOf(yourCharacter.attr('data_nickName'))
-        charactersObjects.splice(indexRemove, 1);
+        characters.splice(indexRemove, 1);
 
         // call createCharacters function again, but this time there are only 3
-        createCharacters(charactersObjects);
+       
 
     });
-// };
+
 
 function pickYourOpponent() {
 
