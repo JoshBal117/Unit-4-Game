@@ -1,6 +1,6 @@
 body {
-    background-image: url(../images/JEDIvsSITH-BACKGROUND.jpeg);
-    background-image: no-repeat;
+    background-image: url(../images/Sithvs\ Jedi.jpg);
+    
 }
 
 
@@ -67,12 +67,19 @@ body {
     float: left;
 }
 
-/* #characterBox {
+#characterBox {
     float: left;
-    min-width: 800px; 
-} */
+    min-width: 200px; 
+}
 
 .charCard {
     padding: 5px;
    
+}
+
+h2 {
+    font-size: x-large;
+    font-family: 'Pathway Gothic One', sans-serif;
+    color:#feda4a;
+    text-align: center;
 }

@@ -13,58 +13,71 @@
     
 <body>
     
+    
     <div class="container">
-        <div>
-            <img src="assets/images/1280px-Star_Wars_Logo.svg.png" alt="" id="logo">
-            <p>ROLE PLAYING GAME</p>
-        </div>
+                <div>
+                    <div class="imgbox">
+                    <img src="assets/images/1280px-Star_Wars_Logo.svg.png" alt="" id="logo">
+                    <p>ROLE PLAYING GAME</p> 
+                    </div>
+                </div>
+                <div class="row col-lg-12" id="characters-waiting-room">
+                    <div id="characterbox">
+                        <div id="asaj" data-character="0" class="charBox">
+                            <div class="charCard" id="asajventresscard">
+                                <h1 class="cardTitle">Asaj Ventress</h1>
+                                <img class="border mycharImage" id="ventressimage" src="assets/images/asajj-ventress.jpg">
+                                <h1 class="cardHP">100</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Ben" data-character="1" class="charBox">
+                        <div class="charCard" id="obiwankenobicard">
+                            <h1 class="cardTitle">Obi-Wan Kenobi</h1>
+                            <img class="border mycharImage" id="obiwanimage" src="assets/images/Obi-Wan.jpg">
+                            <h1 class="cardHP">175</h1>
+                        </div>
+                    </div>
+                    <div id="Tyranus" data-character="2" class="charBox">
+                        <div class="charCard" id="darthtyranuscard">
+                            <h1 class="cardTitle">Darth Tyranus</h1>
+                            <img class="border mycharImage" id="tyranusimage" src="assets/images/Dooku_Max (2).jpg">
+                            <h1 class="cardHP">220</h1>
+                        </div>
+                    </div>
+                    <div id="Maul" data-character="3" class="charBox">
+                        <div class="charCard" id="=darthmaulcard">
+                            <h1 class="cardTitle">Darth Maul</h1>
+                            <img class="border mycharImage"  id="maulimage" src="assets/images/darth-maul.jpg">
+                            <h1 class="cardHP">250</h1>
+                        </div>
+                    </div>
+                </div>
+                   
     </div>
-    <div class="container col-lg-12" id="characters-waiting-room">
-        <div id="characterbox">
-            <div id="asajventress" data-character="0" class="charBox">
-                <div class="charCard" id="asajventresscard">
-                    <h1 class="cardTitle">Asaj Ventress</h1>
-                    <img class="border mycharImage" id="ventressimage" src="assets/images/asajj-ventress.jpg">
-                    <h1 class="cardHP">100</h1>
-                </div>
-            </div>
-            <div id="obiwankenobi" data-character="1" class="charBox">
-                <div class="charCard" id="obiwankenobicard">
-                    <h1 class="cardTitle">Obi-Wan Kenobi</h1>
-                    <img class="border mycharImage" id="obiwanimage" src="assets/images/Obi-Wan.jpg">
-                    <h1 class="cardHP">175</h1>
-                </div>
-            </div>
-            <div id="darthtyranus" data-character="2" class="charBox">
-                <div class="charCard" id="darthtyranuscard">
-                    <h1 class="cardTitle">Darth Tyranus</h1>
-                    <img class="border mycharImage" id="tyranusimage" src="assets/images/Dooku_Max (2).jpg">
-                    <h1 class="cardHP">220</h1>
-                </div>
-            </div>
-            <div id="darthmaul" data-character="3" class="charBox">
-                <div class="charCard" id="=darthmaulcard">
-                    <h1 class="cardTitle">Darth Maul</h1>
-                    <img class="border mycharImage"  id="maulimage" src="assets/images/darth-maul.jpg">
-                    <h1 class="cardHP">250</h1>
-                </div>
-            </div>
-        </div>
-    </div>
+            
+
     <div>
         <h2 id="chooseyourcharacter">Choose your character!</h2>
         <h2 id="choosedefender">Choose your enemy!</h2>
-    </div>
-    
-    <div id="Battlefield">
         <div class='container'>
             <div class='row'>
-                <div class='col-md-5' id="player"></div>
-                <div id="attackDiv">
-                    <a href="#" class="btn double attack" id="attack">ATTACK</a>
-                </div>
-                <div class='col-md-5' id="defender"></div>
+                <div id='remainingEnemies'></div>
             </div>
+        </div>
+    </div>
+    
+    <div class='container'>
+		<div class='row'>
+			<div class='col-md-5' id="yourCharacter"></div>
+			<div class='col-md-2' id="fightButton"></div>
+			<div class='col-md-5' id="currentEnemy"></div>
+		</div>
+	</div>
+
+    <div class='container'>
+        <div class='row'>
+            <div id='remainingEnemies'></div>
         </div>
     </div>
 
